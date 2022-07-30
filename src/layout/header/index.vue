@@ -3,12 +3,12 @@
     <el-row :gutter="15">
       <el-col :xs="4" :sm="12" :md="12" :lg="12" :xl="12">
         <div class="left-panel">
-          <i
-            :class="collapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'"
-            :title="collapse ? '展开' : '收起'"
-            class="fold-unfold"
-            @click="handleCollapse"
-          ></i>
+          <el-icon :size="20" class="fold-unfold"  @click="handleCollapse" >
+            <Expand v-if="collapse" />
+            <Fold v-if="!collapse" />
+          </el-icon>
+          <!-- <i :class="collapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'" :title="collapse ? '展开' : '收起'"
+            class="fold-unfold" @click="handleCollapse"></i> -->
           <Breadcrumbs class="hidden-xs-only" />
         </div>
       </el-col>
@@ -29,6 +29,7 @@ import Breadcrumbs from "@/layout/header/breadcrumbs/index.vue";
 import Avatar from "@/layout/header/avatar/index.vue";
 import Tabs from "./tabs/index.vue";
 import FullScreenBar from "@/layout/header/fullScreenBar/index.vue";
+// import { Fold, Expand } from "@element-plus/icons-vue";
 
 export default {
   name: "Header",
@@ -66,14 +67,17 @@ export default {
   padding: 0 20px;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 .left-panel {
   display: flex;
   height: 60px;
   align-items: center;
 }
+
 .fold-unfold {
   cursor: pointer;
 }
+
 .right-panel {
   display: flex;
   height: 60px;

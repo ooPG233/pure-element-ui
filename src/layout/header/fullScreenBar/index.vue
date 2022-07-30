@@ -1,7 +1,7 @@
 <template>
-    <span>
-        <i class="el-icon-full-screen" @click="click"></i>
-    </span>
+    <el-icon :size="20" class="fullScreenBar" @click="click">
+        <FullScreen />
+    </el-icon>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
     name: "FullScreenBar",
     data() {
         return {
-            isFullscreen:false
+            isFullscreen: false
         }
     },
     methods: {
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style scoped>
-    span{
-        cursor: pointer
-    }
+.fullScreenBar {
+    cursor: pointer
+}
 </style>

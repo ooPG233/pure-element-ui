@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   name: "Index",
   data() {
@@ -17,9 +17,9 @@ export default {
         this.$route.matched.filter((item) => item.name && item.meta.title)
       );
       console.log(this.$route.matched);
-      axios.get('http://127.0.0.1:8000/api/test').then(res=>{
+      axios.get("http://127.0.0.1:8000/api/test").then((res) => {
         console.log(res);
-      })
+      });
     },
   },
 };
